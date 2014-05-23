@@ -1,28 +1,25 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I put this together hastily in order to have something out there for people to look at and start using.
+The goal is to eventually, maybe if there is enough interest, turn it into a ruby gem for more convenience.
 
-Things you may want to cover:
+There is a powerpoint presentation at the root directory of this folder for those who are interested in the back-story behind this project.
 
-* Ruby version
+INSTALLATION STEPS (assuming you already have a ruby environment)
 
-* System dependencies
+-- step 1 
+Clone repository to your local environment
 
-* Configuration
+-- step 2
+fill in your own database configuration parameters in the database.yml file located in config folder
+You will need to put in your host, port, username and password
 
-* Database creation
+-- step 3
+run bundle 
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+-- step 4
+launch your application using: rails s
+ 
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
