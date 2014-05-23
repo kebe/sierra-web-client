@@ -1,0 +1,110 @@
+<%= form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :location_group_port_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :location_group_port_number, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :iii_user_group_code, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :iii_user_group_code, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :full_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :full_name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :iii_language_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :iii_language_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :account_unit, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :account_unit, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :statistic_group_code_num, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :statistic_group_code_num, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :system_option_group_code_num, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :system_option_group_code_num, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :timeout_warning_seconds, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :timeout_warning_seconds, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :timeout_logout_seconds, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :timeout_logout_seconds, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :scope_menu_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :scope_menu_id, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :scope_menu_bitmask, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :scope_menu_bitmask, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :is_new_account, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :is_new_account, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :last_password_change_gmt, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last_password_change_gmt, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :is_exempt, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :is_exempt, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :is_suspended, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :is_suspended, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :is_context_only, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :is_context_only, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                user_path, :class => 'btn' %>
+  </div>
+<% end %>

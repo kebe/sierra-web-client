@@ -1,0 +1,46 @@
+<%- model_class = Role -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => 'Permission' %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:code) %>:</strong></dt>
+  <dd><%= @role.code %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:iii_role_category_id) %>:</strong></dt>
+  <dd><%= @role.iii_role_category_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:is_disabled_during_read_only_access) %>:</strong></dt>
+  <dd><%= @role.is_disabled_during_read_only_access %></dd>
+</dl>
+
+<hr />
+<h3>Users belonging to permission</h3>
+<div id="csv-for-users-in-role">  <%= link_to "Download CSV", export_users_in_role_path(format: "csv"), :class => 'btn btn-mini' %> </div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Full Name</th>
+
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @role.users.each do |user| %>
+      <tr>
+        <td><%= link_to user.id, user_path(user) %></td>
+        <td><%= user.name %></td>
+        <td><%= user.full_name %></td>
+        <td>
+          <%= link_to t('.view', :default => t("helpers.links.view")),
+                      user_path(user), :class => 'btn btn-mini' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              roles_path, :class => 'btn'  %>
+</div>

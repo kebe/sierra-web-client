@@ -1,0 +1,38 @@
+<% if @users.count > 0 %>
+  <div id="csv-for-users-search-list">  <%= link_to "Download CSV", export_users_search_list_path(format: "csv", search_param: @search_param), :class => 'btn btn-mini' %> </div>
+
+  <div class="table-paginate"><%= will_paginate @users, :next_label => 'Next', :previous_label => 'Previous' %></div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th><%= sortable "name", "Name" %></th>
+        <th><%= sortable "location_group_port_number", "Loc group port #" %></th>
+        <th><%= sortable "full_name", "Full Name" %></th>
+        <th><%= sortable "account_unit", "Account unit" %></th>
+        <th><%= sortable "last_password_change_gmt", "Last password change gmt" %></th>
+        <th><%= sortable "is_exempt", "Is exempt" %></th>
+        <th><%= sortable "is_suspended", "Is suspended" %></th>
+        <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.location_group_port_number %></td>
+          <td><%= user.full_name %></td>
+          <td><%= user.account_unit %></td>
+          <td><%= user.last_password_change_gmt %></td>
+          <td><%= user.is_exempt %></td>
+          <td><%= user.is_suspended %></td>
+          <td>
+            <%= link_to t('.show', :default => t("helpers.links.show")),
+                        user_path(user), :class => 'btn btn-mini' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <h4>No results found.</h4>
+<% end %>

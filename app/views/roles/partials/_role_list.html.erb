@@ -1,0 +1,32 @@
+<% if @roles.count > 0 %>
+	<div class="table-paginate"><%= will_paginate @roles, :next_label => 'Next', :previous_label => 'Previous' %></div>
+	<table class="table table-striped">
+	  <thead>
+	    <tr>
+	      <th>Id</th>
+	      <th>Code</th>
+	      <th>Iii role category</th>
+	      <th>Is disabled during read only access</th>
+	      <th>Role name</th>
+	      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <% @roles.each do |role| %>
+	      <tr>
+	        <td><%= link_to role.id, role_path(role) %></td>
+	        <td><%= role.code %></td>
+	        <td><%= role.iii_role_category_id %></td>
+	        <td><%= role.is_disabled_during_read_only_access %></td>
+	        <td><%= role.role_name.name %></td>
+	        <td>
+	          <%= link_to t('.view', :default => t("helpers.links.view")),
+	                      role_path(role), :class => 'btn btn-mini' %>
+	        </td>
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table> 
+<%else%>  
+  <h4>No results found.</h4>
+<% end %>

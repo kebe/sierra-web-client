@@ -1,0 +1,17 @@
+<%- model_class = Role -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => 'Permissions' %></h1>
+</div>
+<%= form_tag roles_path, :method => 'get', :id => "role_list_search" do %>
+  <p>
+    <h6>Search:</h6>
+    <%= text_field_tag :search, params[:search] %>
+  </p>
+<% end %>
+
+<div id="role_listing">
+  <div id="role_list">
+    <%= render :partial => 'roles/partials/role_list', :locals => {:model_class => model_class} %>
+  </div>
+</div>
+

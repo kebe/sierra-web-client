@@ -1,0 +1,17 @@
+<%- model_class = User -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+
+<%= form_tag users_path, :method => 'get', :id => "user_list_search" do %>
+  <p>
+    <h6>Search:</h6>
+    <%= text_field_tag :search, params[:search] %>
+  </p>
+<% end %>
+
+<div id="user_listing">
+  <div id="user_list">
+    <%= render :partial => 'users/partials/user_list', :locals => {:model_class => model_class} %>
+  </div>
+</div>

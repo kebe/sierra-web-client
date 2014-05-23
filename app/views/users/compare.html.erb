@@ -1,0 +1,120 @@
+<%- model_class = User -%>
+<div class="page-header">
+  <h2>Comparing <span class="user-compare"><%= @user.full_name %></span> To <span class="user-compare"><%= @other_user.full_name %></span></h2>
+</div>
+
+<div id="user_info">
+	<div class="original-user">
+		<dl class="dl-horizontal">
+		  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+		  <dd><%= @user.name %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:location_group_port_number) %>:</strong></dt>
+		  <dd><%= @user.location_group_port_number %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:iii_user_group_code) %>:</strong></dt>
+		  <dd><%= @user.iii_user_group_code %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:full_name) %>:</strong></dt>
+		  <dd><%= @user.full_name %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:iii_language_id) %>:</strong></dt>
+		  <dd><%= @user.iii_language_id %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:account_unit) %>:</strong></dt>
+		  <dd><%= @user.account_unit %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:statistic_group_code_num) %>:</strong></dt>
+		  <dd><%= @user.statistic_group_code_num %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:system_option_group_code_num) %>:</strong></dt>
+		  <dd><%= @user.system_option_group_code_num %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:timeout_warning_seconds) %>:</strong></dt>
+		  <dd><%= @user.timeout_warning_seconds %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:timeout_logout_seconds) %>:</strong></dt>
+		  <dd><%= @user.timeout_logout_seconds %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:scope_menu_id) %>:</strong></dt>
+		  <dd><%= @user.scope_menu_id %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:scope_menu_bitmask) %>:</strong></dt>
+		  <dd><%= @user.scope_menu_bitmask %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:is_new_account) %>:</strong></dt>
+		  <dd><%= @user.is_new_account %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:last_password_change_gmt) %>:</strong></dt>
+		  <dd><%= @user.last_password_change_gmt %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:is_exempt) %>:</strong></dt>
+		  <dd><%= @user.is_exempt %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:is_suspended) %>:</strong></dt>
+		  <dd><%= @user.is_suspended %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:is_context_only) %>:</strong></dt>
+		  <dd><%= @user.is_context_only %></dd>
+		</dl>
+	</div>
+
+	<div class="other-user">
+		<dl class="dl-horizontal">
+		  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+		  <dd><%= @other_user.name %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:location_group_port_number) %>:</strong></dt>
+		  <dd><%= @other_user.location_group_port_number %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:iii_user_group_code) %>:</strong></dt>
+		  <dd><%= @other_user.iii_user_group_code %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:full_name) %>:</strong></dt>
+		  <dd><%= @other_user.full_name %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:iii_language_id) %>:</strong></dt>
+		  <dd><%= @other_user.iii_language_id %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:account_unit) %>:</strong></dt>
+		  <dd><%= @other_user.account_unit %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:statistic_group_code_num) %>:</strong></dt>
+		  <dd><%= @other_user.statistic_group_code_num %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:system_option_group_code_num) %>:</strong></dt>
+		  <dd><%= @other_user.system_option_group_code_num %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:timeout_warning_seconds) %>:</strong></dt>
+		  <dd><%= @other_user.timeout_warning_seconds %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:timeout_logout_seconds) %>:</strong></dt>
+		  <dd><%= @other_user.timeout_logout_seconds %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:scope_menu_id) %>:</strong></dt>
+		  <dd><%= @other_user.scope_menu_id %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:scope_menu_bitmask) %>:</strong></dt>
+		  <dd><%= @other_user.scope_menu_bitmask %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:is_new_account) %>:</strong></dt>
+		  <dd><%= @other_user.is_new_account %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:last_password_change_gmt) %>:</strong></dt>
+		  <dd><%= @other_user.last_password_change_gmt %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:is_exempt) %>:</strong></dt>
+		  <dd><%= @other_user.is_exempt %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:is_suspended) %>:</strong></dt>
+		  <dd><%= @other_user.is_suspended %></dd>
+		  <dt><strong><%= model_class.human_attribute_name(:is_context_only) %>:</strong></dt>
+		  <dd><%= @other_user.is_context_only %></dd>
+		</dl>
+	</div>
+</div>
+<hr class="clear">
+
+<div id="user-permissions">
+  <h3>Permissions</h3>
+	<table class="datatable">
+	  <thead>
+	    <tr>
+	      <th><%= model_class.human_attribute_name(:id) %></th>
+	      <th>Role name</th>
+	      <th><%= @user.full_name %></th>
+	      <th><%= @other_user.full_name %></th>
+
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <% @roles.each do |role| %>
+	      <tr>
+	        <td><%= link_to role.id, role_path(role) %></td>
+	        <td><%= role.role_name.name %></td>	   
+	        <td><%= @user.roles.include?(role) ? "\u2713" : '' %></td>	       
+	        <td><%= @other_user.roles.include?(role) ? "\u2713" : '' %></td>	       
+    
+	      </tr>
+	    <% end %>
+	  </tbody>
+	</table>
+
+</div>
+
+<hr class="clear">
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              user_path(@user.id), :class => 'btn'  %>
+</div>
+
+
